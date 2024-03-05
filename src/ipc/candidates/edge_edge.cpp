@@ -48,7 +48,7 @@ bool EdgeEdgeCandidate::ccd(
     const double conservative_rescaling) const
 {
     assert(vertices_t0.size() == 12 && vertices_t1.size() == 12);
-    return edge_edge_ccd(
+    return additive_ccd::edge_edge_ccd(
         // Edge 1 at t=0
         vertices_t0.head<3>(), vertices_t0.segment<3>(3),
         // Edge 2 at t=0
@@ -57,7 +57,7 @@ bool EdgeEdgeCandidate::ccd(
         vertices_t1.head<3>(), vertices_t1.segment<3>(3),
         // Edge 2 at t=1
         vertices_t1.segment<3>(6), vertices_t1.tail<3>(), //
-        toi, min_distance, tmax, tolerance, max_iterations,
+        toi, min_distance, tmax, /*tolerance, max_iterations,*/
         conservative_rescaling);
 }
 

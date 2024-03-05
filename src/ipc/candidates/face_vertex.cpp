@@ -51,7 +51,7 @@ bool FaceVertexCandidate::ccd(
     const double conservative_rescaling) const
 {
     assert(vertices_t0.size() == 12 && vertices_t1.size() == 12);
-    return point_triangle_ccd(
+    return additive_ccd::point_triangle_ccd(
         // Point at t=0
         vertices_t0.head<3>(),
         // Triangle at t=0
@@ -62,7 +62,7 @@ bool FaceVertexCandidate::ccd(
         // Triangle at t=1
         vertices_t1.segment<3>(3), vertices_t1.segment<3>(6),
         vertices_t1.tail<3>(), //
-        toi, min_distance, tmax, tolerance, max_iterations,
+        toi, min_distance, tmax, /*tolerance, max_iterations,*/
         conservative_rescaling);
 }
 

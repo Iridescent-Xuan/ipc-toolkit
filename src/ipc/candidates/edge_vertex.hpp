@@ -74,7 +74,7 @@ protected:
         const double tolerance = DEFAULT_CCD_TOLERANCE,
         const long max_iterations = DEFAULT_CCD_MAX_ITERATIONS,
         const double conservative_rescaling =
-            DEFAULT_CCD_CONSERVATIVE_RESCALING) const override;
+            additive_ccd::DEFAULT_CCD_CONSERVATIVE_RESCALING) const override;
 
     virtual PointEdgeDistanceType known_dtype() const
     {

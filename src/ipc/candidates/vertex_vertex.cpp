@@ -51,10 +51,11 @@ bool VertexVertexCandidate::ccd(
     assert(vertices_t0.size() == 4 || vertices_t0.size() == 6);
     assert(vertices_t0.size() == vertices_t1.size());
     const int dim = vertices_t0.size() / 2;
-    return point_point_ccd(
+    return additive_ccd::point_point_ccd(
         vertices_t0.head(dim), vertices_t0.tail(dim), vertices_t1.head(dim),
-        vertices_t1.tail(dim), toi, min_distance, tmax, tolerance,
-        max_iterations, conservative_rescaling);
+        vertices_t1.tail(dim), toi, min_distance, tmax, /*tolerance,
+        max_iterations,*/
+        conservative_rescaling);
 }
 
 std::ostream& VertexVertexCandidate::write_ccd_query(

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ipc/ccd/additive_ccd.hpp>
 #include <ipc/ccd/ccd.hpp>
 #include <ipc/candidates/collision_stencil.hpp>
 
@@ -36,7 +37,7 @@ public:
         const double tolerance = DEFAULT_CCD_TOLERANCE,
         const long max_iterations = DEFAULT_CCD_MAX_ITERATIONS,
         const double conservative_rescaling =
-            DEFAULT_CCD_CONSERVATIVE_RESCALING) const;
+            additive_ccd::DEFAULT_CCD_CONSERVATIVE_RESCALING) const;
 
     /// @brief Write the CCD query to a stream.
     /// @param out Stream to write to.
@@ -62,7 +63,7 @@ protected:
         const double tolerance = DEFAULT_CCD_TOLERANCE,
         const long max_iterations = DEFAULT_CCD_MAX_ITERATIONS,
         const double conservative_rescaling =
-            DEFAULT_CCD_CONSERVATIVE_RESCALING) const = 0;
+            additive_ccd::DEFAULT_CCD_CONSERVATIVE_RESCALING) const = 0;
 };
 
 } // namespace ipc
